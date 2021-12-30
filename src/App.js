@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Web3 from "web3";
 import Identicon from "identicon.js";
 import "./App.css";
-import CrpytoSocialWorld from "../abis/CryptoSocialWorld.json";
-import Navbar from "./Navbar";
-import Main from "./Main";
+import CrpytoSocialWorld from "./abis/CryptoSocialWorld.json";
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
 
 class App extends Component {
   constructor(props) {
