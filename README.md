@@ -1,2 +1,2 @@
-# crpyto social world
+# crypto social world
 Social Media platform
