@@ -4,7 +4,8 @@ contract CryptoSocialWorld {
     // state stored on the blockchain
     string public name = "CryptoSocialWorld";
 
-    // Stores Images
+    // stores Images
+    uint256 public imageCount = 0;
     mapping(uint256 => Image) public images;
 
     struct Image {
@@ -17,6 +18,10 @@ contract CryptoSocialWorld {
 
     // Create Posts
     function uploadImage() public {
+        // increment image id
+        imageCount = imageCount++;
+
+        // add image to contract
         images[1] = Image(1, "abc123", "Hello, world!", 0, address(0x0));
     }
 

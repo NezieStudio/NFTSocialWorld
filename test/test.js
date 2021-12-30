@@ -11,7 +11,9 @@ contract("CryptoSocialWorld", ([deployer, author, tipper]) => {
     cryptosocialworld = await CryptoSocialWorld.deployed();
   });
 
+  // deployment test
   describe("deployment", async () => {
+    // checks for address
     it("deploys successfully", async () => {
       const address = await cryptosocialworld.address;
       assert.notEqual(address, 0x0);
@@ -20,9 +22,21 @@ contract("CryptoSocialWorld", ([deployer, author, tipper]) => {
       assert.notEqual(address, undefined);
     });
 
+    // checks for name
     it("has a name", async () => {
       const name = await cryptosocialworld.name();
       assert.equal(name, "CryptoSocialWorld");
+    });
+  });
+
+  // creating post test
+  describe("images", async () => {
+    let result;
+
+    it("creates images", async () => {
+      result = await cryptosocialworld.uploadImage();
+      let image = await cryptosocialworld.images(1);
+      console.log(image);
     });
   });
 });
