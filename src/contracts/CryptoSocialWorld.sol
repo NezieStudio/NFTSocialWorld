@@ -1,5 +1,6 @@
 pragma solidity ^0.5.0;
 
 contract CryptoSocialWorld {
-    // Code goes here...
+    // state stored on the blockchain
+    string public name = "CryptoSocialWorld";
 }

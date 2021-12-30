@@ -1,5 +1,6 @@
-const Decentragram = artifacts.require("Decentragram");
+const CryptoSocialWorld = artifacts.require("CryptoSocialWorld");
 
+// deploys contract to the blockchain
 module.exports = function(deployer) {
-  // Code goes here...
+  deployer.deploy(CryptoSocialWorld);
 };
