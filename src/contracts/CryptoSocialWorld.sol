@@ -16,13 +16,33 @@ contract CryptoSocialWorld {
         address payable auther;
     }
 
+    event ImageCreated(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 tipAmount,
+        address payable auther
+    );
+
     // Create Posts
-    function uploadImage() public {
+    function uploadImage(string memory _imgHash, string memory _description)
+        public
+    {
         // increment image id
         imageCount = imageCount++;
 
         // add image to contract
-        images[1] = Image(1, "abc123", "Hello, world!", 0, address(0x0));
+        images[imageCount] = Image(
+            imageCount,
+            _imgHash,
+            _description,
+            0,
+            address(0x0),
+            msg.sender
+        );
+
+        // Trigger event
+        emit ImageCreated(imageCount, _imgHash, _description, 0, msg.sender);
     }
 
     // Tip Posts

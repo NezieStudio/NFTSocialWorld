@@ -32,6 +32,14 @@ contract("CryptoSocialWorld", ([deployer, author, tipper]) => {
   // creating post test
   describe("images", async () => {
     let result;
+    const hash = "abc123";
+
+    before(async () => {
+      result = await cryptosocialworld.uploadImage(hash, "Image description", {
+        from: author,
+      });
+      imageCount = await cryptosocialworld.imageCount();
+    });
 
     it("creates images", async () => {
       result = await cryptosocialworld.uploadImage();
